@@ -213,7 +213,7 @@ class _HomePageState extends State<HomePage> {
               child: Container(
                 padding: const EdgeInsets.all(10),
                 decoration: const BoxDecoration(
-                  color: Colors.greenAccent,
+                  color: Colors.green,
                   borderRadius: BorderRadius.all(Radius.circular(4)),
                 ),
                 child: Text(aux![index].grupo!),

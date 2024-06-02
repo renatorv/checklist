@@ -7,12 +7,15 @@ class ItensChecklistController extends GetxController {
   Map<int?, List<ChecklistModel>> groupServices = {};
   RxBool checkCorrigir = false.obs;
   List<ChecklistModel>? aux = [];
+  String title = '';
 
   @override
   void onInit() {
     listaChecklistModel.value = Get.arguments[0];
     groupServices = Get.arguments[1];
     aux = Get.arguments[2];
+
+    title = aux![0].grupo!;
 
     super.onInit();
   }

@@ -25,14 +25,29 @@ class _ItensChecklistPageState extends State<ItensChecklistPage> {
         builder: (value) => SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 6),
-            child: ListView.builder(
-              itemCount: controller.aux!.length,
-              itemBuilder: (context, index) {
-                return  ChecklistRow(
-                  onPressChangeColor: () => controller.changeColor(),
-                  checkCorrigir: controller.checkCorrigir,
-                );
-              },
+            child: Column(
+              children: [
+                const Divider(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  child: Text(
+                    controller.title,
+                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  ),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: controller.aux!.length,
+                    itemBuilder: (context, index) {
+                      // ChecklistModel aux = controller.aux![0];
+                      return ChecklistRow(
+                        onPressChangeColor: () => controller.changeColor(),
+                        checkCorrigir: controller.checkCorrigir,
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
           ),
         ),
